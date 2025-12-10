@@ -18,71 +18,23 @@
     <div class="container">
       <h1>Webhook demo</h1>
       <button id="button1">Simple webhook trigger</button>
-      <button id="button2">Webhook trigger with payload</button>
-      <button id="button3">Webhook trigger with secret</button>
+
     </div>
 
     <script>
-      const action1 = "https://api.talemate.co/api/v1/webhooks/CHANGETHIS_1/trigger";
-      const action2 = "https://api.talemate.co/api/v1/webhooks/CHANGETHIS_2/trigger";
-      const action3 = "https://api.talemate.co/api/v1/webhooks/CHANGETHIS_3/trigger";
+      const action1 = "https://n8n.dev-is.space/webhook-test/6f61a2d8-fec9-43a8-8466-dd7299ab50e3";
+     
 
       // Simple example of a webhook with empty payload.
       const button1 = document.getElementById("button1");
       button1.addEventListener("click", function () {
         fetch(action1, { method: "POST" })
-          .then(response => {
-            console.log("Action 1 triggered on device");
-          })
           .catch(error => {
             console.error("Error triggering action 1 on device:", error);
           });
       });
 
-      // Example of webhook that passes on data.
-      const button2 = document.getElementById("button2");
-      button2.addEventListener("click", function () {
-        const data = JSON.stringify({"message": "Hello World"});
-
-        fetch(action2, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json"
-              },
-              body: data
-          })
-          .then(response => {
-            console.log("Action 2 triggered on device");
-          })
-          .catch(error => {
-            console.error("Error triggering action 2 on device:", error);
-          });
-      });
-
-      // Example of webhook using encoded secret.
-      const button3 = document.getElementById("button3");
-      button3.addEventListener("click", function () {
-        const secret = "_secret_of_20_chars_";
-
-
-        function getHashedSecret(data, secret) {
-          return CryptoJS.HmacSHA256(data, secret);
-        }
-
-        fetch(action3, {
-          method: "POST",
-          headers: {
-            "X-webhook-signature": getHashedSecret('', secret).toString()
-          },
-        })
-        .then(response => {
-          console.log("Action 3 triggered on device");
-        })
-        .catch(error => {
-          console.error("Error triggering action 3 on device:", error);
-        });
-
-      });
+  
     </script>
   </body>
 </html>
