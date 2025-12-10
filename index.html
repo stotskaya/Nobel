@@ -17,24 +17,10 @@
   <body>
     <div class="container">
       <h1>Webhook demo</h1>
-      <button id="button1">Simple webhook trigger</button>
+     <a href="https://n8n.dev-is.space/webhook-test/6f61a2d8-fec9-43a8-8466-dd7299ab50e3"> Start n8n process!</a>
 
     </div>
 
-    <script>
-      const action1 = "https://n8n.dev-is.space/webhook-test/6f61a2d8-fec9-43a8-8466-dd7299ab50e3";
-     
-
-      // Simple example of a webhook with empty payload.
-      const button1 = document.getElementById("button1");
-      button1.addEventListener("click", function () {
-        fetch(action1, { method: "POST" })
-          .catch(error => {
-            console.error("Error triggering action 1 on device:", error);
-          });
-      });
-
-  
-    </script>
+   
   </body>
 </html>
