@@ -18,8 +18,27 @@
     <div class="container">
       <h1>Webhook demo</h1>
     <form action="https://workflow.dev-is.space/webhook-test/c90bf7eb-4ac4-4bfe-ad09-9f303114a2ea" method="POST" enctype="multipart/form-data">
-        <label for="fileToUpload">Select image to upload:</label>
-        <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
+        <div class='form-group'>
+            <label class='form-label form-required' for='field-0'>Choose</label>
+            <div class='select-input'>
+                <select id='field-0' name='field-0' class='form-required'>
+                    <option value='' disabled selected>Select an option ...</option>
+                        <option value='beshketnik'>beshketnik</option>
+                        <option value='romantic'>romantic</option>
+                        <option value='infantile'>infantile</option>
+                        <option value='Put on Your Pilot Suit'>Put on Your Pilot Suit</option>
+                        <option value='Ghibli-style Portrait'>Ghibli-style Portrait</option>
+                        <option value='Cinematic Car Scene&#x27;'>Cinematic Car Scene&#x27;</option>
+                </select>
+            </div>
+            <p class='error-field-0 error-hidden'>
+                This field is required
+            </p>
+        </div>
+        <div class='form-group'>
+            <label for="fileToUpload">Select image to upload:</label>
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
+        </div>
         <input type="submit" value="Upload Image" name="submit">
     </form>
 
